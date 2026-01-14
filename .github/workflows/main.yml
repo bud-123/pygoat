@@ -29,8 +29,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Set up Docker
         uses: docker-practice/actions-setup-docker@v1
-        with:
-          docker_version: 
       - name: Build Docker Image
         run: docker build -f Dockerfile -t myapp:latest .
       - name: Docker Scout Scan
