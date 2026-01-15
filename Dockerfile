@@ -1,11 +1,13 @@
 FROM python:3.11-slim-bullseye
 # set work directory
 WORKDIR /app
-# dependencies for psycopg2
+# dependencies for psycopg2 - added gcc and other build tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
     dnsutils \
     libpq-dev \
     python3-dev \
+    gcc \
+    build-essential \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 # Set environment variables
